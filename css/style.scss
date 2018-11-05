@@ -14,6 +14,15 @@ Author: themehippo.com
 # Mid grey (sub header) #f4f4f4
 # -------------------------------------------------------------------*/
 
+$white: #ffffff;
+
+@mixin transition($property) {
+    -webkit-transition : $property;
+    -moz-transition    : $property;
+    -o-transition      : $property;
+    transition         : $property;
+}
+
 body {
     font-family : 'Hind', sans-serif;
     font-size   : 15px;
@@ -73,10 +82,7 @@ h6 {
 a {
     color              : #FFC107;
     text-decoration    : none;
-    -webkit-transition : all 0.3s ease 0s;
-    -moz-transition    : all 0.3s ease 0s;
-    -o-transition      : all 0.3s ease 0s;
-    transition         : all 0.3s ease 0s;
+    @include transition(all 0.3s ease 0s);
     }
 
 a,
@@ -144,7 +150,7 @@ ul {
 .btn-default:focus,
 .btn-default:active:focus {
     background   : #2a54f5;
-    color        : #ffffff;
+    color        : $white;
     border-color : #2a54f5;
     }
 
@@ -185,7 +191,7 @@ button:focus,
     -webkit-flex : 2 0 0;
     flex         : 2 0 0;
     position     : relative;
-    background   : #ffffff;
+    background   : $white;
     }
 
 @media (max-width : 768px) {
@@ -221,7 +227,7 @@ button:focus,
  * -------------------*/
 
 .gray-bg {
-    background-color : #ffffff;
+    background-color : $white;
     }
 
 /* --------------------
@@ -271,31 +277,32 @@ button:focus,
     margin-bottom : 50px;
     }
 
-.header .content-wrapper {
 
+.header {
+
+    .content { 
+        width  : 100%;
+        margin : 0 auto;
+        
+
+        h1 {
+        line-height : 1;
+        margin      : 0 0 5px;
+        }
+
+        .lead {
+        font-size : 18px;
+        }
+
+        .about-text {
+        margin : 10px 0;
+        }
     }
 
-.header .content {
-    width  : 100%;
-    margin : 0 auto;
-    }
-
-.header .content h1 {
-    line-height : 1;
-    margin      : 0 0 5px;
-    }
-
-.header .content .lead {
-    font-size : 18px;
-    }
-
-.header .content .about-text {
-    margin : 10px 0;
-    }
-
-.header .btn {
+    .btn {
     margin-top : 40px;
     }
+}
 
 @media (max-width : 768px) {
     .header {
@@ -440,11 +447,11 @@ button:focus,
 .portfolio-item .portfolio-info h3 {
     margin      : 0;
     line-height : 1;
-    color       : #ffffff;
+    color       : $white;
     }
 
 .portfolio-item .portfolio-info small {
-    color : #ffffff;
+    color : $white;
     }
 
 .portfolio-item:hover .portfolio-info {

@@ -265,20 +265,16 @@ button:focus,
   width: 100%;
   margin: 0 auto;
 }
-
 .header .content h1 {
   line-height: 1;
   margin: 0 0 5px;
 }
-
 .header .content .lead {
   font-size: 18px;
 }
-
 .header .content .about-text {
   margin: 10px 0;
 }
-
 .header .btn {
   margin-top: 40px;
 }
